@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { SplashScreen } from "./components/SplashScreen";
 
 function App() {
-  const [splash, setSplash] = useState()
+  const [splash, setSplash] = useState<Boolean>(true)
 
   useEffect(() => {
-    return () => {
-    }
+    
   }, [])
   
 
