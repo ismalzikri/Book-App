@@ -1,9 +1,6 @@
 import styled from "styled-components"
-import { Search } from "./Search"
 
-import Flag from '../assets/img/english.jpg'
-
-const Nav = styled.nav `
+export  const Nav = styled.nav `
   display: flex;
   align-items: center;
   position:fixed;
@@ -14,14 +11,14 @@ const Nav = styled.nav `
   border-radius:0px 0px  15px 15px;  
 `
 
-const Logo = styled.span `
+export const Logo = styled.span `
   margin-bottom: 10px;
   font-size: 30px;
   font-weight: 500;
   color: #fff;
 `
 
-const ImageLang =  styled.figure `
+export const ImageLang =  styled.figure `
   img {
     width: 32px;
     height: 32px;
@@ -30,15 +27,3 @@ const ImageLang =  styled.figure `
     border: 2px solid #fff;  
   }
 `
-
-export const Navbar = () => {
-  return (
-    <Nav>
-      <Logo>Booku</Logo>
-      <Search />
-      <ImageLang>
-        <img src={Flag} alt="flag-language"  />
-      </ImageLang>
-    </Nav>
-  )
-}

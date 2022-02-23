@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SplashScreen } from "./components/SplashScreen";
+import { SplashScreen } from "./components";
 import { Home } from "./pages/Home/Home";
 
 function App() {
