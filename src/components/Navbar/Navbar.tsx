@@ -2,7 +2,9 @@ import { Search } from '..'
 import { 
   Nav,  
   Logo,
-  ImageLang
+  IconBook,
+  ImageLang,
+  RightMenu
 } from './NavbarStyled'
 
 import Flag from '../../assets/img/english.jpg'
@@ -12,9 +14,12 @@ export const Navbar = () => {
     <Nav>
       <Logo>Booku</Logo>
       <Search />
-      <ImageLang>
-        <img src={Flag} alt="flag-language"  />
-      </ImageLang>
+      <RightMenu>
+        <ImageLang>
+          <img src={Flag} alt="flag-language"  />
+        </ImageLang>
+        <IconBook/>
+      </RightMenu>
     </Nav>
   )
 }
