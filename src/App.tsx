@@ -4,7 +4,6 @@ import { Home } from "./pages/Home/Home";
 
 function App() {
   const [splash, setSplash] = useState<Boolean>(true)
-
   useEffect(() => {
     setTimeout(() => {
       setSplash(false)
