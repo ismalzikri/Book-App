@@ -7,14 +7,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setSplash(false)
-    }, 2000);
+    }, 2600);
   }, [])
   
 
   return (
     <>
       { splash ? 
-        <SplashScreen/>
+        <SplashScreen text={`Welcome To Booku`} speed={150} />
         :
         <Home/>
       }

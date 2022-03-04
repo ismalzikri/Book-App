@@ -1,52 +1,36 @@
 import { useEffect, useState } from "react"
 import { Screen, Title } from "./SplashStyled"
 
-const words = ['hi there..', 'Welcome To Booku']
+type SplashScreenProps = {
+  text : string,
+  speed: number
+}
 
-export const SplashScreen = () => {
-
+export const SplashScreen = ({ text, speed } : SplashScreenProps) => {
+  const [displayTex, setDisplayText] = useState<string>("")
   const [index, setIndex] = useState<number>(0)
-  const [subIndex, setSubIndex] = useState<number>(0);
-  const [blink, setBlink] = useState<Boolean>(true);
-  const [reverse, setReverse] = useState<boolean>(false);
 
   useEffect(() => {
-
-    if(index === words.length){
-      return
-    }
-
-    if (
-      subIndex === words[index].length + 1 &&
-      index !== words.length - 1 &&
-      !reverse
-    ) {
-      setReverse(true);
-      return;
-    }
-
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((prev) => prev + 1);
-      return;
-    }
-
-    const TimeOut = setTimeout(() => {
-        setSubIndex((prev) => prev + (reverse ? -1 : 1))
-    },  Math.max(reverse ? 75 : subIndex === words[index].length ? 900 : 150, parseInt(Math.random() * 350)));
-    return () =>  clearTimeout(TimeOut)
-  }, [subIndex, index, reverse])
-
+    const animKey = setInterval(() => {
+      setIndex((index) => {
+        if(index >= text.length -1) {
+          return index
+        }
+        return index + 1
+      } )
+    }, speed)
+    return () => {clearInterval(animKey)}
+  }, [text, speed])
+  
   useEffect(() => {
-    const TimeOut2 = setTimeout(() => {
-      setBlink((prev) => !prev);
-    }, 500);
-    return () => clearTimeout(TimeOut2);
-  }, [blink]);
-
+    setDisplayText(
+      (displayTex) => displayTex + text[index]
+    )
+  }, [index, text])
+  
   return (
     <Screen>
-     <Title>{`${words[index].substring(0, subIndex)} ${blink ? '|' : ' '}`}</Title>
+     <Title>{displayTex}</Title>
     </Screen>
   )
 }
