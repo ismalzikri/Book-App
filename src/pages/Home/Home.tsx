@@ -1,10 +1,11 @@
 import { Navbar } from "../../components"
+import { ChipsList } from "../../components/"
 
 export const Home = () => {
   return (
     <>
-      <Navbar/>
-      <div>body</div>
+        <Navbar/>
+        <ChipsList />
     </>
   )
 }
