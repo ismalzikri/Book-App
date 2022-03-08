@@ -1,26 +1,35 @@
-import { Item } from "./ChipsCardStyled"
+import { 
+  Item,
+  IconSort,
+  IconFilter,
+  WrapItem
+} from "./ChipsCardStyled"
 
 export const ChipsCard = () => {
   return (
     <>
       <Item>
-        <span>Health</span>
+        <IconFilter />
+        <span>Filter</span>
       </Item>
       <Item>
-        <span>Sports</span>
+        <IconSort />
+        <span>Sort</span>
       </Item>
-      <Item>
-        <span>International</span>
-      </Item>
-      <Item>
-        <span>Localization</span>
-      </Item>
-      <Item>
-        <span>Introvert</span>
-      </Item>
-      <Item>
-        <span>Extrovert</span>
-      </Item>
+      <WrapItem>
+        <Item>
+          <span>International</span>
+        </Item>
+        <Item>
+          <span>Localization</span>
+        </Item>
+        <Item>
+          <span>Introvert</span>
+        </Item>
+        <Item>
+          <span>Extrovert</span>
+        </Item>
+      </WrapItem>
     </>
   )
 }

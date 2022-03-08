@@ -1,4 +1,4 @@
-import { Navbar } from "../../components"
+import { BooksList, Navbar } from "../../components"
 import { ChipsList } from "../../components/"
 
 export const Home = () => {
@@ -6,6 +6,7 @@ export const Home = () => {
     <>
         <Navbar/>
         <ChipsList />
+        <BooksList />
     </>
   )
 }
