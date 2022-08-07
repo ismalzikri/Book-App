@@ -6,14 +6,13 @@ export  const Nav = styled.nav `
   align-items: center;
   position:fixed;
   width: 100%;
-  padding: 0px 20px 5px;
+  padding: 0px 50px 5px;
   background: #867AE9;
   box-sizing: border-box;
-  border-radius:0px 0px  15px 15px;  
+  border-radius:0px 0px  50px 50px;  
 `
 
 export const Logo = styled.span `
-  margin-bottom: 10px;
   font-size: 30px;
   font-weight: 500;
   color: #fff;

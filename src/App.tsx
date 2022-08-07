@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       { splash ? 
-        <SplashScreen text={`Welcome To Booku`} speed={150} />
+        <SplashScreen text={`Welcome To Booku`} speed={120} />
         :
         <Home/>
       }

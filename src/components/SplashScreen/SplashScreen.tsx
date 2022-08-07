@@ -7,30 +7,30 @@ type SplashScreenProps = {
 }
 
 export const SplashScreen = ({ text, speed } : SplashScreenProps) => {
-  const [displayTex, setDisplayText] = useState<string>("")
-  const [index, setIndex] = useState<number>(0)
+  const [displayText, setDisplayText] = useState<number>(0)
 
   useEffect(() => {
-    const animKey = setInterval(() => {
-      setIndex((index) => {
-        if(index >= text.length -1) {
-          return index
+    let interval: number
+     
+    interval = window.setInterval(() => {
+      setDisplayText((length) => {
+        if(length === text.length) {
+          clearInterval(interval)
+          return length
+        } else {
+          return length + 1
         }
-        return index + 1
-      } )
+      })
     }, speed)
-    return () => {clearInterval(animKey)}
+
+    return () => { clearInterval(interval) }
+
   }, [text, speed])
   
-  useEffect(() => {
-    setDisplayText(
-      (displayTex) => displayTex + text[index]
-    )
-  }, [index, text])
   
   return (
     <Screen>
-     <Title>{displayTex}</Title>
+     <Title>{text.slice(0, displayText)}</Title>
     </Screen>
   )
 }
